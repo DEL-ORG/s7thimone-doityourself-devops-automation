@@ -63,7 +63,7 @@ pipeline {
             }
         }
 
-        stage('Login') {
+        stage('test') {
             steps {
                 sh '''
 		echo 'Starting the pipeline...'
@@ -73,7 +73,6 @@ pipeline {
 		echo "The value of BRANCH_CATALOG is: ${BRANCH_CATALOG}"
 		echo "The value of BRANCH_CART is: ${BRANCH_CART}"
 		echo "The value of BRANCH_ASSETS is: ${BRANCH_ASSETS}"
-		echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 		'''
             }
         }
