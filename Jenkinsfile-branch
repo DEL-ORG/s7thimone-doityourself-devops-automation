@@ -108,7 +108,7 @@ pipeline {
                 sh '''
                 rm -rf s7thimone-do-it-yourself || true
                 git clone -b ${BRANCH_CHECKOUT} git@github.com:DEL-ORG/s7thimone-do-it-yourself.git
-                cd ${WORKSPACE}/Eric-do-it-yourself-Checkout/checkout
+                cd ${WORKSPACE}/s7thimone-do-it-yourself/checkout
                 docker build  -t thimone/doityourself-checkout:${BUILD_NUMBER} .
                 docker build  -t thimone/doityourself-checkout_db:${BUILD_NUMBER} . -f Dockerfile-db
                 docker push  thimone/doityourself-checkout:${BUILD_NUMBER}
@@ -124,7 +124,7 @@ pipeline {
                 sh '''
                 rm -rf s7thimone-do-it-yourself || true
                 git clone -b ${BRANCH_CATALOG} git@github.com:DEL-ORG/s7thimone-do-it-yourself.git
-                cd ${WORKSPACE}/Eric-do-it-yourself-Catalog/catalog
+                cd ${WORKSPACE}/s7thimone-do-it-yourself/catalog
                 docker build  -t thimone/doityourself-catalog:${BUILD_NUMBER} .
                 docker build  -t thimone/doityourself-catalog-db:${BUILD_NUMBER} . -f Dockerfile-db
                 docker push  thimone/doityourself-catalog:${BUILD_NUMBER}
@@ -141,7 +141,7 @@ pipeline {
                 sh '''
                 rm -rf s7thimone-do-it-yourself || true
                 git clone -b ${BRANCH_CART} git@github.com:DEL-ORG/s7thimone-do-it-yourself.git
-                cd ${WORKSPACE}/Eric-do-it-yourself-Cart/cart
+                cd ${WORKSPACE}/s7thimone-do-it-yourself/cart
                 docker  build -t thimone/doityourself-cart:${BUILD_NUMBER} .
                 docker  build -t thimone/doityourself-cart-dynamodb:${BUILD_NUMBER} . -f Dockerfile-dynamodb 
                 docker push  thimone/doityourself-cart:${BUILD_NUMBER}
@@ -157,7 +157,7 @@ pipeline {
                 sh '''
                 rm -rf s7thimone-do-it-yourself || true
                 git clone -b ${BRANCH_ASSETS} git@github.com:DEL-ORG/s7thimone-do-it-yourself.git
-                cd ${WORKSPACE}/Eric-do-it-yourself-Assets/assets
+                cd ${WORKSPACE}/s7thimone-do-it-yourself/assets
                 docker build -t thimone/doityourself-asset:${BUILD_NUMBER} .
                 docker push thimone/doityourself-asset:${BUILD_NUMBER}
 
