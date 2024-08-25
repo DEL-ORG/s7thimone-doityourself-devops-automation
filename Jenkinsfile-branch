@@ -76,6 +76,7 @@ pipeline {
                 rm -rf s7thimone-do-it-yourself || true
                 git clone -b ${BRANCH_UI} git@github.com:DEL-ORG/s7thimone-do-it-yourself.git
                 cd ${WORKSPACE}/s7thimone-do-it-yourself/ui
+		echo "The value of BRANCH_UI is: ${BRANCH_UI}"
                 docker build -t thimone/doityourself-ui:${BUILD_NUMBER} .
                 docker push  thimone/doityourself-ui:${BUILD_NUMBER}
                 '''
@@ -91,6 +92,7 @@ pipeline {
                 rm -rf s7thimone-do-it-yourself || true
                 git clone -b ${BRANCH_ORDERS} git@github.com:DEL-ORG/s7thimone-do-it-yourself.git
                 cd ${WORKSPACE}/s7thimone-do-it-yourself/orders
+		echo "The value of BRANCH_UI is: ${BRANCH_ORDERS}"
                 docker build -t thimone/doityourself-orders:${BUILD_NUMBER} .
                 docker build -t thimone/doityourself-orders-db:${BUILD_NUMBER} . -f Dockerfile-db
                 docker build -t thimone/doityourself-orders-db-rabbitmq:${BUILD_NUMBER} . -f Dockerfile-rabbit-mq
@@ -109,6 +111,7 @@ pipeline {
                 rm -rf s7thimone-do-it-yourself || true
                 git clone -b ${BRANCH_CHECKOUT} git@github.com:DEL-ORG/s7thimone-do-it-yourself.git
                 cd ${WORKSPACE}/s7thimone-do-it-yourself/checkout
+		echo "The value of BRANCH_UI is: ${BRANCH_CHECKOUT}"
                 docker build  -t thimone/doityourself-checkout:${BUILD_NUMBER} .
                 docker build  -t thimone/doityourself-checkout_db:${BUILD_NUMBER} . -f Dockerfile-db
                 docker push  thimone/doityourself-checkout:${BUILD_NUMBER}
@@ -125,6 +128,7 @@ pipeline {
                 rm -rf s7thimone-do-it-yourself || true
                 git clone -b ${BRANCH_CATALOG} git@github.com:DEL-ORG/s7thimone-do-it-yourself.git
                 cd ${WORKSPACE}/s7thimone-do-it-yourself/catalog
+		echo "The value of BRANCH_UI is: ${BRANCH_CATALOG}"
                 docker build  -t thimone/doityourself-catalog:${BUILD_NUMBER} .
                 docker build  -t thimone/doityourself-catalog-db:${BUILD_NUMBER} . -f Dockerfile-db
                 docker push  thimone/doityourself-catalog:${BUILD_NUMBER}
@@ -134,14 +138,14 @@ pipeline {
             }
         }
 
-
-        stage('CART+build+push') {
+         stage('CART+build+push') {
 
             steps {
                 sh '''
                 rm -rf s7thimone-do-it-yourself || true
                 git clone -b ${BRANCH_CART} git@github.com:DEL-ORG/s7thimone-do-it-yourself.git
                 cd ${WORKSPACE}/s7thimone-do-it-yourself/cart
+		echo "The value of BRANCH_UI is: ${BRANCH_CART}"
                 docker  build -t thimone/doityourself-cart:${BUILD_NUMBER} .
                 docker  build -t thimone/doityourself-cart-dynamodb:${BUILD_NUMBER} . -f Dockerfile-dynamodb 
                 docker push  thimone/doityourself-cart:${BUILD_NUMBER}
@@ -158,6 +162,7 @@ pipeline {
                 rm -rf s7thimone-do-it-yourself || true
                 git clone -b ${BRANCH_ASSETS} git@github.com:DEL-ORG/s7thimone-do-it-yourself.git
                 cd ${WORKSPACE}/s7thimone-do-it-yourself/assets
+		echo "The value of BRANCH_UI is: ${BRANCH_ASSETS}"
                 docker build -t thimone/doityourself-asset:${BUILD_NUMBER} .
                 docker push thimone/doityourself-asset:${BUILD_NUMBER}
 
