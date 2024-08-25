@@ -30,14 +30,6 @@ pipeline {
                             trim: true
                             ),
 
-
-                          string(
-                            defaultValue: 'main',
-                            name: 'BRANCH_ORDERS',
-			    description: 'Enter branch to deploy the ORDERS',
-                            trim: true
-                            ),
-
                           string(
                             defaultValue: 'main',
                             name: 'BRANCH_CHECKOUT',
