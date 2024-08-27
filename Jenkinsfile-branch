@@ -66,6 +66,7 @@ pipeline {
         stage('test') {
             steps {
                 sh '''
+		echo 'the pipeline is starting here...'
                 echo "BRANCH_UI is: ${BRANCH_UI}"
 		echo "The value of BRANCH_ORDERS is: ${BRANCH_ORDERS}"
 		echo "The value of BRANCH_CHECKOUT is: ${BRANCH_CHECKOUT}"
