@@ -1,22 +1,22 @@
 catalog:
-  tag: "18"
+  tag: "19"
 orders_db:
-  tag: "18"
+  tag: "19"
 catalog_db:
-  tag: "18"
+  tag: "19"
 cart:
-  tag: "18"
+  tag: "19"
 cart_dynamodb:
-  tag: "18"
+  tag: "19"
 orders:
-  tag: "18"
+  tag: "19"
 orders_db_rabbitmq:
-  tag: "18"
+  tag: "19"
 checkout:
-  tag: "18"
+  tag: "19"
 checkout_db:
-  tag: "18"
+  tag: "19"
 assets:
-  tag: "18"
+  tag: "19"
 ui:
-  tag: "18"
+  tag: "19"
