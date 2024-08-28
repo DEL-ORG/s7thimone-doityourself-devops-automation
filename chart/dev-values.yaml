@@ -1,7 +1,7 @@
 catalog:
   tag: "c27fbb"
 orders_db:
-  tag: "73e2b2"
+  tag: "4899dd"
 catalog_db:
   tag: "c27fbb"
 cart:
@@ -9,9 +9,9 @@ cart:
 cart_dynamodb:
   tag: "e38d71"
 orders:
-  tag: "73e2b2"
+  tag: "4899dd"
 orders_db_rabbitmq:
-  tag: "73e2b2"
+  tag: "4899dd"
 checkout:
   tag: "1b00c5"
 checkout_db:
