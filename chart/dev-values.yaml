@@ -1,9 +1,9 @@
 catalog:
-  tag: "c27fbb"
+  tag: "afd2bc"
 orders_db:
   tag: "4899dd"
 catalog_db:
-  tag: "c27fbb"
+  tag: "afd2bc"
 cart:
   tag: "e38d71"
 cart_dynamodb:
